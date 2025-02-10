@@ -2,27 +2,18 @@
 :: Game Runner
 cd ./runner-publish/
 start "" dotnet GameRunner.dll
+echo Game Runner Ready
 
 :: Game Engine
 cd ../engine-publish/
-timeout /t 1
+timeout /t 1 /nobreak
 start "" dotnet Engine.dll
+echo Game Engine Ready
 
 :: Game Logger
 cd ../logger-publish/
-timeout /t 1
+timeout /t 1 /nobreak
 start "" dotnet Logger.dll
-
-:: Bots
-cd ../reference-bot-publish/
-timeout /t 3
-start "" dotnet ReferenceBot.dll
-timeout /t 3
-start "" dotnet ReferenceBot.dll
-timeout /t 3
-start "" dotnet ReferenceBot.dll
-timeout /t 3
-start "" dotnet ReferenceBot.dll
-cd ../
+echo Game Logger Ready
 
 pause
